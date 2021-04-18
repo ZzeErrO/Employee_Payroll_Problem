@@ -1,0 +1,17 @@
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\EmployeeManagementTest.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\EmployeeManagementTest.pdb
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\EmployeeManagement.exe
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\EmployeeManagement.pdb
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\EmployeeManagement.exe.config
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\obj\Debug\EmployeeManagementTest.csprojAssemblyReference.cache
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\obj\Debug\EmployeeManagementTest.csproj.CoreCompileInputs.cache
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\obj\Debug\EmployeeManagementTest.csproj.CopyComplete
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\obj\Debug\EmployeeManagementTest.dll
+C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagementTest\obj\Debug\EmployeeManagementTest.pdb
