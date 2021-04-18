@@ -5,3 +5,10 @@ C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManag
 C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CoreCompileInputs.cache
 C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.exe
 C:\Users\Prashik Jaware\source\repos\ERDiagram\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.pdb
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\bin\Debug\EmployeeManagement.exe.config
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\bin\Debug\EmployeeManagement.exe
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\bin\Debug\EmployeeManagement.pdb
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.csprojAssemblyReference.cache
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CoreCompileInputs.cache
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.exe
+C:\Users\Prashik Jaware\source\repos\SSMS-SQL\EmployeePayrollProblem\Employee-Management\EmployeeManagement\obj\Debug\EmployeeManagement.pdb
