@@ -10,7 +10,7 @@ namespace EmployeeManagement
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
+             Console.ReadKey();
         }
     }
 }
