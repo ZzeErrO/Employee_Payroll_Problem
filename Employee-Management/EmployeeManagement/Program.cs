@@ -10,6 +10,7 @@ namespace EmployeeManagement
     {
         static void Main(string[] args)
         {
+            Salary.getAllData();
             Console.ReadKey();
         }
     }
