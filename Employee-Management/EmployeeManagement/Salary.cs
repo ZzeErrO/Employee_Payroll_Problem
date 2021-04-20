@@ -10,11 +10,13 @@ namespace EmployeeManagement
 {
     public class Salary
     {
+        //UC1
         private static SqlConnection ConnectionSetup()
         {
             return new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Employee;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
+        //UC2
         public static void getAllData()
         {
             SqlConnection SalaryConnection = ConnectionSetup();
@@ -88,6 +90,7 @@ namespace EmployeeManagement
             }
         }
 
+        //UC3 and UC4
         public decimal UpdateEmployeeSalary(SalaryUpdateModel salaryUpdateModel)
         {
             SqlConnection SalaryConnection = ConnectionSetup();
@@ -146,6 +149,62 @@ namespace EmployeeManagement
                 SalaryConnection.Close();
             }
             return salary;
+        }
+
+        //UC5
+        public static void ParticularRange()
+        {
+            SqlConnection SalaryConnection = ConnectionSetup();
+            try
+            {
+                using (SalaryConnection)
+                {
+                    string query = @"select * from employee where DeptNo between 80  and 100";
+                    SqlCommand command = new SqlCommand(query, SalaryConnection);
+                    SalaryConnection.Open();
+                    SqlDataReader dr = command.ExecuteReader();
+                    SalaryDetailModel model = new SalaryDetailModel();
+                    Console.WriteLine("----------TABLE FOR EMPLOYEE WITH A SPECIFIC DEPARTMENTNUMBER RANGE----------");
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            model.EmployeeId = dr.GetInt32(0);
+                            model.EmployeeName = dr.GetString(1);
+                            model.Gender = dr.GetString(2);
+                            model.HireDay = dr.GetDateTime(3);
+                            model.DepartmentNumber = dr.GetInt32(4);
+                            model.Email = dr.GetString(5);
+                            model.BirthDay = dr.GetDateTime(6);
+                            model.JobDescription = dr.GetString(7);
+                            model.ProfileImage = dr.GetString(8);
+                            Console.WriteLine(model.EmployeeId + " " +
+                                model.EmployeeName + " "
+                                + model.Gender + " "
+                                + model.HireDay + " "
+                                + model.DepartmentNumber + " "
+                                + model.Email + " "
+                                + model.BirthDay + " "
+                                + model.JobDescription + " "
+                                + model.ProfileImage);
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                SalaryConnection.Close();
+            }
+        }
+
+        public static void SumAvgMinMax()
+        {
+            
         }
 
     }

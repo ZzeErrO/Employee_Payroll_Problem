@@ -10,7 +10,15 @@ namespace EmployeeManagement
     {
         static void Main(string[] args)
         {
+            //UC2
             Salary.getAllData();
+
+            //UC5
+            Salary.ParticularRange();
+
+            //UC6
+            Salary.SumAvgMinMax();
+
             Console.ReadKey();
         }
     }
