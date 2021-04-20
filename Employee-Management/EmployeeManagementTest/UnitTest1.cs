@@ -16,11 +16,11 @@ namespace EmployeeManagementTest
             {
                 SalaryId = 3,
                 Month = "May",
-                EmployeeSalary = 3000000,
+                EmployeeSalary = 3000000.0M,
                 EmployeeId = 4
             };
 
-            int EmpSalary = salary.UpdateEmployeeSalary(updateModel);
+            decimal EmpSalary = salary.UpdateEmployeeSalary(updateModel);
 
             Assert.AreEqual(updateModel.EmployeeSalary, EmpSalary);
         }

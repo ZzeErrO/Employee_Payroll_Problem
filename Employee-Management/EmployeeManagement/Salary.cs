@@ -35,7 +35,7 @@ namespace EmployeeManagement
                             model.EmployeeId = dr.GetInt32(0);
                             model.EmployeeName = dr.GetString(1);
                             model.Gender = dr.GetString(2);
-                            model.Month = dr.GetDateTime(3);
+                            model.HireDay = dr.GetDateTime(3);
                             model.DepartmentNumber = dr.GetInt32(4);
                             model.Email = dr.GetString(5);
                             model.BirthDay = dr.GetDateTime(6);
@@ -44,7 +44,7 @@ namespace EmployeeManagement
                             Console.WriteLine(model.EmployeeId + " " + 
                                 model.EmployeeName + " " 
                                 + model.Gender + " " 
-                                + model.Month + " "
+                                + model.HireDay + " "
                                 + model.DepartmentNumber + " "
                                 + model.Email + " "
                                 + model.BirthDay + " "
@@ -88,15 +88,16 @@ namespace EmployeeManagement
             }
         }
 
-        public int UpdateEmployeeSalary(SalaryUpdateModel salaryUpdateModel)
+        public decimal UpdateEmployeeSalary(SalaryUpdateModel salaryUpdateModel)
         {
             SqlConnection SalaryConnection = ConnectionSetup();
-            int salary = 0;
+            decimal salary = 0;
             try
             {
                 using (SalaryConnection)
                 {
                     SalaryDetailModel displayModel = new SalaryDetailModel();
+                    SalaryUpdateModel display = new SalaryUpdateModel();
                     SqlCommand command = new SqlCommand("spUpdateEmployeeSalary", SalaryConnection);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@id", salaryUpdateModel.SalaryId);
@@ -113,15 +114,20 @@ namespace EmployeeManagement
                             displayModel.EmployeeId = Convert.ToInt32(dr["EmpId"]);
                             displayModel.EmployeeName = dr["EName"].ToString();
                             displayModel.JobDescription = dr["JobDiscription"].ToString();
-                            displayModel.EmployeeSalary = Convert.ToInt32(dr["EmpSal"]);
-                            displayModel.Month = (DateTime)dr["SalaryMonth"];
-                            //displayModel.SalaryId = Convert.ToInt32(dr["SalaryId"]);
+                            display.EmployeeSalary = Convert.ToInt32(dr["EmpSal"]);
+                            //displayModel.HireDay = Convert.ToDateTime(dr["SalaryMonth"]);
+                            //displayModel.HireDay = DateTime.ParseExact(dr["SalaryMonth"], "dd/MM/yyyy", null);
+                            //displayModel.HireDay = dr.GetDateTime(3);
+                           // displayModel.HireDay = dr.GetDateTime(3).ToString();
+                           // displayModel.HireDay = 
+                            display.SalaryId = Convert.ToInt32(dr["SalaryId"]);
+
                             Console.WriteLine(displayModel.EmployeeName + " " 
-                                + displayModel.EmployeeSalary + " " 
-                                + displayModel.Month);
+                                + display.EmployeeSalary + " " 
+                                + display.SalaryId);
 
                             Console.WriteLine("\n");
-                            salary = displayModel.EmployeeSalary;
+                            salary = display.EmployeeSalary;
                         }
                     }
                     else
