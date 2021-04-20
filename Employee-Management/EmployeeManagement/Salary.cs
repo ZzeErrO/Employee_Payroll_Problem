@@ -202,9 +202,67 @@ namespace EmployeeManagement
             }
         }
 
+        //UC6
         public static void SumAvgMinMax()
         {
-            
+            SqlConnection SalaryConnection = ConnectionSetup();
+            try
+            {
+                using (SalaryConnection)
+                {
+                    string query = @"select sum(EmpSal) 'SumOfSalary' from employee as e inner join salary as s on e.EmpId = s.EmpId ";
+                    SqlCommand command = new SqlCommand(query, SalaryConnection);
+                    SalaryConnection.Open();
+                    string sum = command.ExecuteScalar().ToString();
+                    Console.WriteLine("\nSUM OF SALARY : " + sum);
+
+                    string query1 = @"select avg(EmpSal) 'AverageOfSalary' from employee as e inner join salary as s on e.EmpId = s.EmpId ";
+                    SqlCommand command1 = new SqlCommand(query1, SalaryConnection);
+                    string avg = command1.ExecuteScalar().ToString();
+                    Console.WriteLine("AVERAGE OF SALARY : " + avg);
+
+                    string query2 = @"select min(EmpSal) 'MinimuumOfSalary' from employee as e inner join salary as s on e.EmpId = s.EmpId ";
+                    SqlCommand command2 = new SqlCommand(query2, SalaryConnection);
+                    string min = command2.ExecuteScalar().ToString();
+                    Console.WriteLine("MINIMUM OF SALARY : " + min);
+
+                    string query3 = @"select max(EmpSal) 'MaximuumOfSalary' from employee as e inner join salary as s on e.EmpId = s.EmpId ";
+                    SqlCommand command3 = new SqlCommand(query3, SalaryConnection);
+                    string max = command3.ExecuteScalar().ToString();
+                    Console.WriteLine("MAXIMUM OF SALARY : " + max);
+
+                    string query4 = @"select Gender, count(gender) 'CountByGender' from employee as e inner join salary as s on e.EmpId = s.EmpId group by gender ";
+                    SqlCommand command4 = new SqlCommand(query4, SalaryConnection);
+                    SqlDataReader dr = command4.ExecuteReader();
+                    Console.WriteLine("----------TABLE FOR MALE AND FEMALE EMPLOYEE COUNT----------");
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            char i = 'F';
+                            if (i == Convert.ToChar(dr["Gender"]))
+                            {
+                                int Female = Convert.ToInt32(dr["CountByGender"]);
+                                Console.WriteLine("Female : " + Female);
+                            }
+                            else
+                            {
+                                int Male = Convert.ToInt32(dr["CountByGender"]);
+                                Console.WriteLine("Male : " + Male);
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                SalaryConnection.Close();
+            }
         }
 
     }
