@@ -55,9 +55,10 @@ namespace EmployeeManagement
 
                         }
                     }
+
                     SalaryConnection.Close();
-                    query = @"Select * from Salary";
-                    SqlCommand command1 = new SqlCommand(query, SalaryConnection);
+                    string query1 = @"Select * from Salary";
+                    SqlCommand command1 = new SqlCommand(query1, SalaryConnection);
                     SalaryConnection.Open();
                     SqlDataReader dr1 = command1.ExecuteReader();
                     SalaryUpdateModel display = new SalaryUpdateModel();
@@ -258,6 +259,67 @@ namespace EmployeeManagement
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                SalaryConnection.Close();
+            }
+        }
+
+        public static void AddEmployeeToDatabase()
+        {
+            SqlConnection SalaryConnection = ConnectionSetup();
+            try
+            {
+                using (SalaryConnection)
+                {
+                    SalaryDetailModel displayModel = new SalaryDetailModel() 
+                    {
+                        EmployeeId = 21,
+                        EmployeeName = "Prashik",
+                        Gender = "M",
+                        HireDay = DateTime.Parse("1997-05-01"),
+                        DepartmentNumber = 2,
+                        Email = "prashik@gmail.com",
+                        BirthDay = DateTime.Now,
+                        JobDescription = "Software Developer",
+                        ProfileImage = ".jpg"
+                    };
+
+                    SalaryUpdateModel display = new SalaryUpdateModel()
+                    {
+                       // SalaryId = 2,
+                        Month = "May",
+                        EmployeeSalary = 9999999999.0M,
+                        EmployeeId = 21
+                    };
+                    SqlCommand command = new SqlCommand("SpAddEmployeeDetails", SalaryConnection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@EmpId", display.EmployeeId);
+                    command.Parameters.AddWithValue("@EmployeeName", displayModel.EmployeeName);
+                    command.Parameters.AddWithValue("@Gender", displayModel.Gender);
+                    command.Parameters.AddWithValue("@HireDate", displayModel.HireDay);
+                    command.Parameters.AddWithValue("@DepartmentNumber", displayModel.DepartmentNumber);
+                    command.Parameters.AddWithValue("@Email", displayModel.Email);
+                    command.Parameters.AddWithValue("@Birthday", displayModel.BirthDay);
+                    command.Parameters.AddWithValue("@JobDescription", displayModel.JobDescription);
+                    command.Parameters.AddWithValue("@ProfileImage", displayModel.ProfileImage);
+
+                    command.Parameters.AddWithValue("@SalaryMonth", display.Month);
+                    command.Parameters.AddWithValue("@EmpSal", display.EmployeeSalary);
+                    
+
+                    SalaryConnection.Open();
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    getAllData();
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
             }
             finally
             {

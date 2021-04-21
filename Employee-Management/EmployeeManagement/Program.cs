@@ -19,6 +19,9 @@ namespace EmployeeManagement
             //UC6
             Salary.SumAvgMinMax();
 
+            //UC7
+            Salary.AddEmployeeToDatabase();
+
             Console.ReadKey();
         }
     }
